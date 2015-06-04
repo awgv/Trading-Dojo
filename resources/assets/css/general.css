@@ -1,0 +1,131 @@
+.dojo-offset-100 {
+	margin-top: 100px;
+}
+
+.dojo-offset-30 {
+	margin-top: 30px;
+}
+
+.dojo-table-offset {
+	margin-top: 5px;
+}
+
+.dojo-sign-offset {
+	margin-bottom: 20px;
+}
+
+.dojo-signed-offset {
+	margin-bottom: 12px;
+}
+
+.modal-smaller {
+	width: 400px;
+}
+
+.loading {
+	display: none;
+	background: url(img/loading.gif) no-repeat;
+	width: 14px;
+	height: 15px;
+	margin: 6px auto 6px auto;
+}
+
+.sell-item-name-search-results,
+.offer-item-name-search-results {
+	visibility: hidden;
+	position: absolute;
+	top: 59px;
+	left: 15px;
+	z-index: 1000;
+	width: 269px;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	font-size: 14px;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: 4px;
+	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+	.offer-item-name-search-results {
+		width: 360px;
+		top: 34px;
+	}
+
+	.sell-item-name-search-results > li,
+	.sell-item-name-search-results > p,
+	.offer-item-name-search-results > li,
+	.offer-item-name-search-results > p {
+		padding: 3px 12px;
+		clear: both;
+		font-weight: 400;
+		line-height: 1.42857143;
+		color: #333;
+		white-space: nowrap;
+	}
+
+		.sell-item-name-search-results > p.nowrap,
+		.offer-item-name-search-results > p.nowrap {
+			white-space: normal;
+		}
+
+		.sell-item-name-search-results > li.js-sell-item-name-search-result-hover,
+		.sell-item-name-search-results > li:hover,
+		.offer-item-name-search-results > li.js-offer-item-name-search-result-hover,
+		.offer-item-name-search-results > li:hover {
+			color: #262626;
+			text-decoration: none;
+			background-color: #f5f5f5;
+			cursor: pointer;
+		}
+
+.btn:focus,
+.navbar-nav>li>a:focus {
+	outline: none;
+}
+
+/* Sticky footer */
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 110px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 100px;
+	background-color: #f5f5f5;
+}
+
+	.footer .text-muted {
+		margin: 20px 0;
+	}
+
+.table > tbody > tr > td {
+	vertical-align: middle;
+}
+
+.dojo-popover-ul {
+	padding-left: 15px;
+}
+
+.dojo-popover-ol {
+	padding-left: 20px;
+}
+
+.dojo-glyphicon-messages-size {
+	font-size: 6rem;
+}

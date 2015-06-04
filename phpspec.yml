@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Dojo
+        psr4_prefix: Dojo
+        src_path: app
