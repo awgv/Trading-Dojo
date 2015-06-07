@@ -4,9 +4,15 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"type": "project",
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/martinbean/illuminate-html"
+		}
+	],
 	"require": {
 		"laravel/framework": "5.0.*",
-		"illuminate/html": "~5.0",
+		"Illuminate/Html": "dev-feature/add-number-field",
 		"cmgmyr/messenger": "~2.4"
 	},
 	"require-dev": {

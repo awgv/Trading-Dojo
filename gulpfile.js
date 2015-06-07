@@ -60,10 +60,10 @@ elixir(function(mix) {
 	mix
 		.scripts([
 			// Finally, combine everything for production:
-			'libraries/bootstrap.min.js',
-			'libraries/validator.min.js',
-			'libraries/mindmup-editabletable.js',
-			'libraries/bootstrap-switch.min.js',
+			'dependencies/bootstrap.min.js',
+			'dependencies/validator.min.js',
+			'dependencies/mindmup-editabletable.js',
+			'dependencies/bootstrap-switch.min.js',
 			'wrapped/general.js',
 		], 'public/js/general.min.js');
 });*/

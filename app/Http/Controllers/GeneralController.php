@@ -11,7 +11,7 @@ class GeneralController extends Controller {
 
 	/**
 	 * Show Dojo's home page to the user.
-	 * 
+	 *
 	 * @return Response
 	 */
 	public function index()
@@ -20,6 +20,17 @@ class GeneralController extends Controller {
 
 		if ( $user )
 		{
+			if ( !Session::has('source_code_notice') )
+			{
+				Session::put('source_code_notice', 'unseen');
+			}
+			else if ( Session::get('source_code_notice') === 'unseen' )
+			{
+				Session::set('source_code_notice', 'seen');
+			}
+
+
+
 			$offers = Offer::whereHas('User', function($query) use ($user)
 			{
 				$query->where('id', $user->id);
@@ -36,9 +47,9 @@ class GeneralController extends Controller {
 		}
 		else
 		{
-			$oneDay = Carbon::now()->subDays(2);
+			$twoDays = Carbon::now()->subDays(2);
 
-			$offers = Offer::where('created_at', '>=', $oneDay)
+			$offers = Offer::where('created_at', '>=', $twoDays)
 			->where( function($query) {
 				$query
 					->where('active', '1')

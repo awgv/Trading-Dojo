@@ -135,7 +135,6 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-		'Illuminate\Html\HtmlServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -149,6 +148,7 @@ return [
 		/**
 		 * Other Service Providers...
 		 */
+		'Illuminate\Html\HtmlServiceProvider',
 		'Dojo\Providers\CustomValidationServiceProvider',
 		'Cmgmyr\Messenger\MessengerServiceProvider',
 

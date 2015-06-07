@@ -64,6 +64,16 @@
 					</div>
 				</div>
 			</div>
+		@if ( Session::get('source_code_notice') === 'unseen' )
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="alert alert-info alert-dismissible fade in" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						If you're interested in the source code, contributing to it, or even using it to make something else, <a href="https://github.com/Banandrew/Trading-Dojo"><strong>it's now available on GitHub</strong></a>.
+					</div>
+				</div>
+			</div>
+		@endif
 	@else
 			<div class="row dojo-sign-offset">
 				<div class="col-md-3 col-md-offset-3">
@@ -250,7 +260,7 @@
 									@if ( $offer->item->type === 'mod' )
 										<td>
 											<a href="/{{ $offer->platform_slug }}/{{ $offer->item->slug }}">
-												{{ $offer->item->name }} 
+												{{ $offer->item->name }}
 												@if ( $offer->rank === '0' || $offer->rank === null )
 													(unranked)
 												@else
@@ -278,7 +288,7 @@
 															{{ $offer->seller_ign }}
 														</a>
 													</strong>
-												@endif		
+												@endif
 											@else
 												{{ $offer->seller_ign }}
 											@endif
