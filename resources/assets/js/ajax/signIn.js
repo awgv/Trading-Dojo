@@ -1,9 +1,9 @@
 // A call to sign user in.
 // ========================================================================
 var accountSignInFormVariables = {
-	modal        : '.js-modal-account-sign-in',
-	form         : $('.account_sign_in_form'),
-	errorText    : 'The ID and password didn’t match. Please check the credentials you entered or try again with a different combination.'
+	modal     : '.js-modal-account-sign-in',
+	form      : $('.account_sign_in_form'),
+	errorText : 'The ID and password didn’t match. Please check the credentials you entered or try again with a different combination.'
 };
 
 $('.account_sign_in_form_submit').click( function () {

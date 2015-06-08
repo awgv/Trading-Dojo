@@ -55,23 +55,23 @@ var userOnlineStatusAjaxCall = function(state) {
 
 if ( userOnlineStatusCheckbox.hasClass('js-user-online-status-1')) {
 	userOnlineStatusCheckbox.bootstrapSwitch({
-		state : true,
-		onColor : 'success',
+		state    : true,
+		onColor  : 'success',
 		offColor : 'danger',
-		onText : 'ONLINE',
-		offText : 'OFFLINE',
-		size  : 'mini'
+		onText   : 'ONLINE',
+		offText  : 'OFFLINE',
+		size     : 'mini'
 	}).on('switchChange.bootstrapSwitch', function(event, state) {
 		userOnlineStatusAjaxCall(state);
 	});
 } else {
 	userOnlineStatusCheckbox.bootstrapSwitch({
-		state : false,
-		onColor : 'success',
+		state    : false,
+		onColor  : 'success',
 		offColor : 'danger',
-		onText : 'ONLINE',
-		offText : 'OFFLINE',
-		size  : 'mini'
+		onText   : 'ONLINE',
+		offText  : 'OFFLINE',
+		size     : 'mini'
 	}).on('switchChange.bootstrapSwitch', function(event, state) {
 		userOnlineStatusAjaxCall(state);
 	});

@@ -33,7 +33,7 @@ Route::group(['prefix' => 'offer'], function () {
 
 Route::group(['prefix' => 'messages'], function () {
 	Route::get('/'           , ['as' => 'messages'            , 'uses' => 'MessagesController@messages']);
-	Route::post('check'       , ['as' => 'messages.check'      , 'uses' => 'MessagesController@check']);
+	Route::post('check'      , ['as' => 'messages.check'      , 'uses' => 'MessagesController@check']);
 	Route::post('send/store' , ['as' => 'messages.send.store' , 'uses' => 'MessagesController@store']);
 	Route::get('remove/{id}' , ['as' => 'messages.remove'     , 'uses' => 'MessagesController@remove']);
 	Route::get('{id}'        , ['as' => 'messages.show'       , 'uses' => 'MessagesController@show']);

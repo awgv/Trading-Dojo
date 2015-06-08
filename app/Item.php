@@ -16,7 +16,7 @@ class Item extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'type'];
+	protected $fillable = ['name', 'type', 'slug'];
 
 	/**
 	 * Defining relations.

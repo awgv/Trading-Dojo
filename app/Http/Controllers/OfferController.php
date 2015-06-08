@@ -15,7 +15,7 @@ class OfferController extends Controller {
 
 	/**
 	 * Store a new offer for a guest.
-	 * 
+	 *
 	 * @return String
 	 */
 	public function guestStore(StoreOfferRequest $request)
@@ -27,25 +27,25 @@ class OfferController extends Controller {
 			$offer = new Offer;
 
 
-			$offer->seller_ign  = Request::input('sell_user_ign');
-			$offer->user_id     = null;
-			$offer->active      = null;
+			$offer->seller_ign = Request::input('sell_user_ign');
+			$offer->user_id    = null;
+			$offer->active     = null;
 
 
-			$offer->platform        = Request::input('sell_item_platform');
-			$offer->platform_slug   = Str::slug(Request::input('sell_item_platform'));
+			$offer->platform      = Request::input('sell_item_platform');
+			$offer->platform_slug = Str::slug(Request::input('sell_item_platform'));
 
 
 			if ( Request::input('sell_item_rank') === '11' )
 			{
-				$offer->rank        = null;
+				$offer->rank = null;
 			}
 			else
 			{
-				$offer->rank        = Request::input('sell_item_rank');
+				$offer->rank = Request::input('sell_item_rank');
 			}
 
-			$offer->price           = Request::input('sell_item_price');
+			$offer->price = Request::input('sell_item_price');
 
 
 			$code = str_random(10);
@@ -55,8 +55,8 @@ class OfferController extends Controller {
 			}
 
 
-			$offer->code            = $code;
-			$offer->commentary      = Request::input('sell_item_commentary');
+			$offer->code       = $code;
+			$offer->commentary = Request::input('sell_item_commentary');
 			$offer->item()->associate($item);
 			$offer->save();
 
@@ -71,7 +71,7 @@ class OfferController extends Controller {
 
 	/**
 	 * Store a new offer for an authenticated user.
-	 * 
+	 *
 	 * @return String
 	 */
 	public function authStore(StoreOfferRequest $request)
@@ -87,9 +87,9 @@ class OfferController extends Controller {
 
 			if ($user)
 			{
-				$offer->seller_ign  = $user->name;
+				$offer->seller_ign = $user->name;
 				$offer->user()->associate($user);
-				$offer->active      = '1';
+				$offer->active     = '1';
 			}
 			else
 			{
@@ -97,22 +97,22 @@ class OfferController extends Controller {
 			}
 
 
-			$offer->platform        = Request::input('sell_item_platform');
-			$offer->platform_slug   = Str::slug(Request::input('sell_item_platform'));
+			$offer->platform      = Request::input('sell_item_platform');
+			$offer->platform_slug = Str::slug(Request::input('sell_item_platform'));
 
 
 			if ( Request::input('sell_item_rank') === '11' )
 			{
-				$offer->rank        = null;
+				$offer->rank = null;
 			}
 			else
 			{
-				$offer->rank        = Request::input('sell_item_rank');
+				$offer->rank = Request::input('sell_item_rank');
 			}
 
-			$offer->price           = Request::input('sell_item_price');
-			$offer->code            = null;
-			$offer->commentary      = Request::input('sell_item_commentary');
+			$offer->price      = Request::input('sell_item_price');
+			$offer->code       = null;
+			$offer->commentary = Request::input('sell_item_commentary');
 			$offer->item()->associate($item);
 			$offer->save();
 
@@ -127,7 +127,7 @@ class OfferController extends Controller {
 
 	/**
 	 * Remove an offer.
-	 * 
+	 *
 	 * @return String
 	 */
 	public function remove()
@@ -172,7 +172,7 @@ class OfferController extends Controller {
 
 	/**
 	 * Expire an offer.
-	 * 
+	 *
 	 * @return String
 	 */
 	public function expire(\Illuminate\Http\Request $request)
@@ -190,7 +190,7 @@ class OfferController extends Controller {
 
 			if ($offer)
 			{
-				$offer->active     = '0';
+				$offer->active = '0';
 				$offer->save();
 				return 'Expired.';
 			}
@@ -208,7 +208,7 @@ class OfferController extends Controller {
 
 	/**
 	 * Update an offer.
-	 * 
+	 *
 	 * @return String
 	 */
 	public function update(\Illuminate\Http\Request $request)
@@ -278,7 +278,7 @@ class OfferController extends Controller {
 
 	/**
 	 * Renew an offer.
-	 * 
+	 *
 	 * @return String
 	 */
 	public function renew(\Illuminate\Http\Request $request)
@@ -294,6 +294,7 @@ class OfferController extends Controller {
 			->where('id', Request::input('sell_item_id'))
 			->first();
 
+
 			if ($offer)
 			{
 				$date = new Carbon();
@@ -302,6 +303,7 @@ class OfferController extends Controller {
 				$offer->created_at = $date;
 				$offer->updated_at = $date;
 				$offer->save();
+
 				return 'Renewed.';
 			}
 			else
@@ -318,7 +320,7 @@ class OfferController extends Controller {
 
 	/**
 	 * Renew all offers.
-	 * 
+	 *
 	 * @return String
 	 */
 	public function renewAll(\Illuminate\Http\Request $request)
@@ -361,7 +363,7 @@ class OfferController extends Controller {
 
 	/**
 	 * Get offers.
-	 * 
+	 *
 	 * @return Response
 	 */
 	public function get($platform, $item)
@@ -407,7 +409,7 @@ class OfferController extends Controller {
 
 	/**
 	 * Get recent offers.
-	 * 
+	 *
 	 * @return Response
 	 */
 	public function recent($platform)
@@ -445,7 +447,7 @@ class OfferController extends Controller {
 	/**
 	 * Method that's being called by a scheduler
 	 * to remove everything older than 3 days.
-	 * 
+	 *
 	 * @return Void
 	 */
 	public function scheduledRemoval()
