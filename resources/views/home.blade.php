@@ -64,7 +64,7 @@
 					</div>
 				</div>
 			</div>
-		@if ( Session::get('source_code_notice') === 'unseen' )
+		@if ( Request::cookie('source_code_notice') === 'unseen' )
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
 					<div class="alert alert-info alert-dismissible fade in" role="alert">

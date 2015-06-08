@@ -1,10 +1,13 @@
 <?php namespace Dojo\Http\Controllers;
 
 use Carbon\Carbon;
+use Dojo\Offer;
+use Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
+use Request;
 use Session;
-use Dojo\Offer;
 
 class GeneralController extends Controller {
 
@@ -20,17 +23,6 @@ class GeneralController extends Controller {
 
 		if ( $user )
 		{
-			if ( !Session::has('source_code_notice') )
-			{
-				Session::put('source_code_notice', 'unseen');
-			}
-			else if ( Session::get('source_code_notice') === 'unseen' )
-			{
-				Session::set('source_code_notice', 'seen');
-			}
-
-
-
 			$offers = Offer::whereHas('User', function($query) use ($user)
 			{
 				$query->where('id', $user->id);
@@ -41,9 +33,25 @@ class GeneralController extends Controller {
 			->paginate(20);
 
 
-			return view('home')
+			$view = view('home')
 				->with('user', $user)
 				->with('offers', $offers);
+
+
+			if ( !Request::cookie('source_code_notice') )
+			{
+				return Response::make($view)
+					->withCookie(cookie()->forever('source_code_notice', 'unseen'));
+			}
+			else if ( Request::cookie('source_code_notice') === 'unseen' )
+			{
+				return Response::make($view)
+					->withCookie(cookie()->forever('source_code_notice', 'seen'));
+			}
+			else
+			{
+				return Response::make($view);
+			}
 		}
 		else
 		{
