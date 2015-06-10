@@ -33,7 +33,7 @@ var ajaxFormSubmit = function (modal, form, url, actionButton, error, modalFoote
 			success : function (response) {
 				var successNewHeight;
 				if (response !== error) {
-					if ( form.hasClass('js-account-signed') ) {
+					if ( form.hasClass('js-account-signed') || response === 'Registered.' ) {
 						window.location.reload();
 					} else {
 						$('.loading').fadeOut(200);

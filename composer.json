@@ -11,7 +11,7 @@
 		}
 	],
 	"require": {
-		"laravel/framework": "5.0.*",
+		"laravel/framework": "5.1.*",
 		"Illuminate/Html": "dev-feature/add-number-field",
 		"cmgmyr/messenger": "~2.4"
 	},

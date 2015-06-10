@@ -1,9 +1,7 @@
 <?php namespace Dojo\Http\Controllers\Auth;
 
 use Dojo\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\PasswordBroker;
-use Dojo\Http\Controllers\Auth\ResetsPasswords;
+use Dojo\Http\Controllers\Auth\Traits\ResetsPasswords;
 
 class PasswordController extends Controller {
 
@@ -20,18 +18,14 @@ class PasswordController extends Controller {
 
 	use ResetsPasswords;
 
+
 	/**
 	 * Create a new password controller instance.
 	 *
-	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
-	 * @param  \Illuminate\Contracts\Auth\PasswordBroker  $passwords
 	 * @return void
 	 */
-	public function __construct(Guard $auth, PasswordBroker $passwords)
+	public function __construct()
 	{
-		$this->auth = $auth;
-		$this->passwords = $passwords;
-
 		$this->middleware('guest');
 	}
 

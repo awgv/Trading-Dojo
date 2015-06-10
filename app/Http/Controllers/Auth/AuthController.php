@@ -1,10 +1,9 @@
 <?php namespace Dojo\Http\Controllers\Auth;
 
+use Dojo\User;
+use Validator;
 use Dojo\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\Registrar;
-use Dojo\Http\Controllers\Auth\AuthenticatesAndRegistersUsers;
-use Illuminate\Http\Request;
+use Dojo\Http\Controllers\Auth\Traits\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller {
 
@@ -17,12 +16,41 @@ class AuthController extends Controller {
 	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
 	 * @return void
 	 */
-	public function __construct(Guard $auth, Registrar $registrar)
+	public function __construct()
 	{
-		$this->auth = $auth;
-		$this->registrar = $registrar;
-
 		$this->middleware('guest', ['except' => 'getLogout']);
+	}
+
+
+	/**
+	 * Get a validator for an incoming registration request.
+	 *
+	 * @param  array  $data
+	 * @return \Illuminate\Contracts\Validation\Validator
+	 */
+	protected function validator(array $data)
+	{
+		return Validator::make($data, [
+			'account_ign'      => 'required|alpha_num_dots|max:255|unique:users,name',
+			'account_email'    => 'required|email|max:255|unique:users,email',
+			'account_password' => 'required|confirmed|min:6'
+		]);
+	}
+
+
+	/**
+	 * Create a new user instance after a valid registration.
+	 *
+	 * @param  array  $data
+	 * @return User
+	 */
+	protected function create(array $data)
+	{
+		return User::create([
+			'name'     => $data['account_ign'],
+			'email'    => $data['account_email'],
+			'password' => bcrypt($data['account_password']),
+		]);
 	}
 
 }
