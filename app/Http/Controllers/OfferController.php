@@ -32,8 +32,15 @@ class OfferController extends Controller {
 			$offer->active     = null;
 
 
-			$offer->platform      = Request::input('sell_item_platform');
-			$offer->platform_slug = Str::slug(Request::input('sell_item_platform'));
+			if ( Request::input('sell_item_platform') === 'PC' || Request::input('sell_item_platform') === 'PS4' || Request::input('sell_item_platform') === 'Xbox One' )
+			{
+				$offer->platform      = Request::input('sell_item_platform');
+				$offer->platform_slug = Str::slug(Request::input('sell_item_platform'));
+			}
+			else
+			{
+				return 'Doesn\'t exist.';
+			}
 
 
 			if ( Request::input('sell_item_rank') === '11' )
@@ -97,8 +104,15 @@ class OfferController extends Controller {
 			}
 
 
-			$offer->platform      = Request::input('sell_item_platform');
-			$offer->platform_slug = Str::slug(Request::input('sell_item_platform'));
+			if ( Request::input('sell_item_platform') === 'PC' || Request::input('sell_item_platform') === 'PS4' || Request::input('sell_item_platform') === 'Xbox One' )
+			{
+				$offer->platform      = Request::input('sell_item_platform');
+				$offer->platform_slug = Str::slug(Request::input('sell_item_platform'));
+			}
+			else
+			{
+				return 'Doesn\'t exist.';
+			}
 
 
 			if ( Request::input('sell_item_rank') === '11' )
