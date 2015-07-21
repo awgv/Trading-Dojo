@@ -151,6 +151,7 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Dojo\Providers\CustomValidationServiceProvider',
 		'Cmgmyr\Messenger\MessengerServiceProvider',
+		'Msurguy\Honeypot\HoneypotServiceProvider',
 
 	],
 
@@ -201,6 +202,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'HTML'      => 'Illuminate\Html\HtmlFacade',
+		'Honeypot'  => 'Msurguy\Honeypot\HoneypotFacade'
 
 	],
 

@@ -13,7 +13,8 @@
 	"require": {
 		"laravel/framework": "5.1.*",
 		"Illuminate/Html": "dev-feature/add-number-field",
-		"cmgmyr/messenger": "~2.4"
+		"cmgmyr/messenger": "~2.4",
+		"msurguy/honeypot": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

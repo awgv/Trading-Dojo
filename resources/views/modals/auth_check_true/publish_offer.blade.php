@@ -117,6 +117,8 @@
 								</div>
 							</div>
 						</div>
+						{{-- Basic spam protection via hidden field (validation can be found in StoreOfferRequest): --}}
+						{!! Honeypot::generate('wax_name', 'wax_time') !!}
 					{!! Form::close() !!}
 				</div>
 			</div>
