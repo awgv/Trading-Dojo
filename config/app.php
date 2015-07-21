@@ -152,6 +152,7 @@ return [
 		'Dojo\Providers\CustomValidationServiceProvider',
 		'Cmgmyr\Messenger\MessengerServiceProvider',
 		'Msurguy\Honeypot\HoneypotServiceProvider',
+		Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
 	],
 
@@ -202,7 +203,8 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'HTML'      => 'Illuminate\Html\HtmlFacade',
-		'Honeypot'  => 'Msurguy\Honeypot\HoneypotFacade'
+		'Honeypot'  => 'Msurguy\Honeypot\HoneypotFacade',
+		'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
 
 	],
 

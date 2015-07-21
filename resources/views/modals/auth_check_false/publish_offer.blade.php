@@ -115,6 +115,14 @@
 								</div>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									{!! Form::label('', 'Additionally, check this:') !!}
+									{!! Recaptcha::render() !!}
+								</div>
+							</div>
+						</div>
 						{{-- Basic spam protection via hidden field (validation can be found in StoreOfferRequest): --}}
 						{!! Honeypot::generate('wax_name', 'wax_time') !!}
 					{!! Form::close() !!}
