@@ -104,7 +104,7 @@
 							</td>
 							@if ( $offers[0]['item']['type'] === 'mod' )
 								<td>
-									@if ( $offer->rank === 0 )
+									@if ( $offer->rank === 0 || $offer->rank === null )
 										unranked
 									@else
 										{{ $offer->rank }}

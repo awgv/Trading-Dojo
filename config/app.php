@@ -148,7 +148,7 @@ return [
 		/**
 		 * Other Service Providers...
 		 */
-		'Illuminate\Html\HtmlServiceProvider',
+		Collective\Html\HtmlServiceProvider::class,
 		'Dojo\Providers\CustomValidationServiceProvider',
 		'Cmgmyr\Messenger\MessengerServiceProvider',
 		'Msurguy\Honeypot\HoneypotServiceProvider',
@@ -201,8 +201,8 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-		'Form'      => 'Illuminate\Html\FormFacade',
-		'HTML'      => 'Illuminate\Html\HtmlFacade',
+		'Form'      => Collective\Html\FormFacade::class,
+		'HTML'      => Collective\Html\HtmlFacade::class,
 		'Honeypot'  => 'Msurguy\Honeypot\HoneypotFacade',
 		'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
 
