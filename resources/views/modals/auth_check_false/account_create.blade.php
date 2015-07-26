@@ -54,7 +54,6 @@
 										'class'          => 'form-control',
 										'placeholder'    => 'We don\'t store passwords in our database',
 										'required'       => 'required',
-										'pattern'        => '^[a-zA-Z0-9-_]+$',
 										'maxlength'      => '255',
 										'data-minlength' => '6'
 									]) !!}
@@ -70,7 +69,6 @@
 										'class'          => 'form-control',
 										'placeholder'    => 'Password again, just to be sure that it\'s right',
 										'required'       => 'required',
-										'pattern'        => '^[a-zA-Z0-9-_]+$',
 										'maxlength'      => '255',
 										'data-minlength' => '6',
 										'data-match'     => '#account_password'

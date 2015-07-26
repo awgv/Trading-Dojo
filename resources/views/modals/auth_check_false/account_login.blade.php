@@ -36,7 +36,6 @@
 										'id'             => 'account_sign_in_password',
 										'class'          => 'form-control',
 										'required'       => 'required',
-										'pattern'        => '^[a-zA-Z0-9-_]+$',
 										'maxlength'      => '255',
 										'data-minlength' => '6'
 									]) !!}
